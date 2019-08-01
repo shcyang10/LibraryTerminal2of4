@@ -20,14 +20,14 @@ public final class BookManager {
 				String line = br.readLine();
 				while (line != null) {
 					String[] split = line.split(",");
-					addBook(new Book(split[0], split[1], split[2]));
+					addBook(new Book(split[0], split[1], split[2], Status.valueOf(split[3]), Category.valueOf(split[4])));
 					line = br.readLine();
 				}
 			} catch (IOException e) {
-				System.out.println(e);
+				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println(e);
+			System.out.println("ERROR: booklist.txt was not found!");
 		}
 	}
 
