@@ -35,22 +35,22 @@ public final class Library {
 	}
 	public static String userSelection(Scanner scanner, int input) {
 		switch(input) {
-		case 1:
+		case 1:;
 		//return readFromFile();
 		
-		case 2:
+		case 2:;
 		//return	searchAuthor();
 			
-		case 3:
+		case 3:;
 		//return	searchTitle();
 		
-		case 4:
+		case 4:;
 		//return	checkBookOut();
 			
-		case 5:
+		case 5:;
 		//return	returnBook();
 			
 		}
-		return " "; // remove this later it's not needed
+		return " "; // remove this later it's not needed;
 	}
 }	
