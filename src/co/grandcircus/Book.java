@@ -8,12 +8,6 @@ public final class Book {
 	private Status status;
 	private Category category;
 
-	public Book(String _title, String _author, String _dueAt) {
-		title = _title;
-		author = _author;
-		dueAt = _dueAt;
-	}
-
 	public Book(String _title, String _author, String _dueAt, Status _status, Category _category) {
 		title = _title;
 		author = _author;
