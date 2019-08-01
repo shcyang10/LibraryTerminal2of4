@@ -24,10 +24,10 @@ public final class BookManager {
 					line = br.readLine();
 				}
 			} catch (IOException e) {
-				System.out.println(e);
+				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println(e);
+			System.out.println("ERROR: booklist.txt was not found!");
 		}
 	}
 
