@@ -32,15 +32,18 @@ public final class BookManager {
 	}
 
 	// function definitions
-	public String getDisplayString(String author) {
+	public String getDisplayString(String author, String title) {
 		String ret = "\n";
 		for (Book book : books) {
-			if (author == null || author.equals(book.getAuthor())) {
+			if (
+				(author == null || author.equals(book.getAuthor())) &&
+				(title == null || book.getTitle().contains(title))) {
 				ret += book.getFullTitle(this); 
 				ret += "\n";
 			}
 		}
 		return ret;
+		
 	}
 
 	public void addBook(Book book) {
