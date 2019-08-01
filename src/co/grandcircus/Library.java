@@ -1,8 +1,11 @@
 package co.grandcircus;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,8 +17,10 @@ public final class Library {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		ArrayList<Book> bookList = new ArrayList<>();
 		int userInput;
 		String cont = "y";
+
 		System.out.println("Welcome to the Library of Alexandria");
 		// display list
 		// need textfile for methods
@@ -28,18 +33,21 @@ public final class Library {
 			System.out.println(
 					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
 			userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
-			userSelection(scan, userInput);
+			userSelection(scan, userInput, bookList);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
 	}
 
-	public static String userSelection(Scanner scan, int userInput) {
+	public static String userSelection(Scanner scan, int userInput, ArrayList<Book> bookList) {
 		BookManager b = new BookManager();
 		switch (userInput) {
 		case 1:
+			readFromFile(bookList);
+			for (Book output : bookList) {
+				System.out.println(output);	
+				}
 			break;
 		// return readFromFile();
-
 		case 2:
 			String str;
 			scan.nextLine();
@@ -66,6 +74,29 @@ public final class Library {
 			b.addBook(new Book(str3, str2, "on Shelf", null, null));
 		}
 		return " "; // remove this later it's not needed
+	}
+
+	public static void readFromFile(ArrayList<Book> bookList) {
+		String fileName = "booklist.txt";
+		Path path = Paths.get(fileName);
+		File file = path.toFile();
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			String line = br.readLine();
+
+			while (line != null) {
+				String[] bookReader = line.split(",");
+				Book b = new Book(bookReader[0], bookReader[1], bookReader[2], 
+						Status.valueOf(bookReader[3]), Category.valueOf(bookReader[4]));
+				bookList.add(b);
+				line = br.readLine();
+			}
+			br.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+		} catch (IOException e) {
+			System.out.println("File read error.");
+		}
 	}
 
 	public static void writeToFile(ArrayList<Book> bookList) {

@@ -1,14 +1,15 @@
-The Sun Also Rises,Ernest Hemingway,On Shelf,null,fiction
-Les Miserables,Victor Hugo,On Shelf,null,drama
-Stranger in a Strange Land,Robert Heinlein,On Shelf,null,science fiction
-Beyond Good and Evil,Friedrich Nietzsche,On Shelf,null,philosophy
-First and Only,Dan Abnett,On Shelf,null,science fiction
-What I Know For Sure,Oprah Winfrey,On Shelf,null,nonfiction
-The Lathe of Heaven,Ursula K. Le Guin,On Shelf,null,fantasy
-American Gods,Neil Gaiman,On Shelf,null,science fiction
-Reflections of the Sun,Unknown,On Shelf,null,philosophy
-Canticles of Flame,Numeras Greenbrook,On Shelf,null,science
-Benedictions of Steel,Qhu Zhe Totoro,On Shelf,null,science
-Litany of the Forest,Ziedrich Graff,On Shelf,null,sceince
-Invocation of the Sea,Lars Dromflet,On Shelf,null,science
-Hymns of Gaia,Guy Ribald,On Shelf,null,science
+The Sun Also Rises,Ernest Hemingway,On Shelf,NULL,FICTION
+Les Miserables,Victor Hugo,On Shelf,NULL,DRAMA
+Stranger in a Strange Land,Robert Heinlein,On Shelf,NULL,SCIENCE_FICTION
+Beyond Good and Evil,Friedrich Nietzsche,On Shelf,NULL,PHILOSOPHY
+First and Only,Dan Abnett,On Shelf,NULL,SCIENCE_FICTION
+What I Know For Sure,Oprah Winfrey,On Shelf,NULL,NONFICTION
+The Lathe of Heaven,Ursula K. Le Guin,On Shelf,NULL,FANTASY
+American Gods,Neil Gaiman,On Shelf,NULL,SCIENCE_FICTION
+Reflections of the Sun,Unknown,On Shelf,NULL,PHILOSOPHY
+Canticles of Flame,Numeras Greenbrook,On Shelf,NULL,SCIENCE
+Benedictions of Steel,Qhu Zhe Totoro,On Shelf,NULL,SCIENCE
+Litany of the Forest,Ziedrich Graff,On Shelf,NULL,SCIENCE
+Invocation of the Sea,Lars Dromflet,On Shelf,NULL,SCIENCE
+Hymns of Gaia,Guy Ribald,On Shelf,NULL,SCIENCE
+Twilight of a New Age,Brian Hudson,NULL,SCIENCE_FICTION
