@@ -1,10 +1,35 @@
 package co.grandcircus;
 import java.util.Vector;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public final class BookManager {
 
 	// immutable Vector of books
-	private final Vector<Book> books = new Vector<>();
+	private static final Vector<Book> books = new Vector<>();
+	
+	// constructor: loads books
+	public BookManager() {
+		try {
+			BufferedReader br = new BufferedReader(
+				new FileReader("booklist.txt"));
+			try {
+				String line = br.readLine();
+				while (line != null) {
+					String[] split = line.split(",");
+					addBook(new Book(split[0], split[1], split[2]));
+					line = br.readLine();
+				}
+			} catch (IOException e) {
+				System.out.println(e);
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println(e);
+		}
+	}
 
 	// function definitions
 	public String getDisplayString(String author) {
