@@ -11,4 +11,8 @@ public final class Book {
 		dueAt = _dueAt;
 		status = _status;
 	}
+	@Override
+	public String toString() {
+		return "\"" + title + "\"" + " by " + author + " (Due at " + dueAt + ")" + " (" + status + ")";
+	}
 }
