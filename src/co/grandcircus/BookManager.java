@@ -11,7 +11,7 @@ public final class BookManager {
 		String ret = "\n";
 		for (Book book : books) {
 			if (author == null || author.equals(book.getAuthor())) {
-				ret += book.toString(); 
+				ret += book.getFullTitle(this); 
 				ret += "\n";
 			}
 		}
