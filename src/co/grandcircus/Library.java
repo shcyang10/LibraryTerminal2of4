@@ -46,8 +46,8 @@ public final class Library {
 			scanner.nextLine();
 			System.out.println("Type in an author");
 			str = scanner.nextLine();
-		return	b.getDisplayString(str);
-			
+			b.getDisplayString(str);
+		return str;	
 		case 3:
 		//return	searchTitle();
 		
