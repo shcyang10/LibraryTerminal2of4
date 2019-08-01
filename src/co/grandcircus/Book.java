@@ -6,12 +6,14 @@ public final class Book {
 	private String author;
 	private String dueAt;
 	private Status status;
+	private Category category;
 
-	public Book(String _title, String _author, String _dueAt, Status _status) {
+	public Book(String _title, String _author, String _dueAt, Status _status, Category _category) {
 		title = _title;
 		author = _author;
 		dueAt = _dueAt;
 		status = _status;
+		category = _category;
 	}
 
 	@Override
@@ -37,5 +39,7 @@ public final class Book {
 	public Status getStatus() {
 		return status;
 	}
-	
+	public Category getCategory() {
+		return category;
+	}
 }

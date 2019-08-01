@@ -14,7 +14,7 @@ public final class Library {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int userInput;
-		boolean cont = true;
+		String cont = "y";
 		System.out.println("Welcome to the Library of Alexandria");
 		// display list
 		// need textfile for methods
@@ -23,18 +23,13 @@ public final class Library {
 		// input to search by title
 		// input to ask if they want to check book out
 		// input to ask if they want to return the book
-		while(cont) {
+		while (cont.equalsIgnoreCase("y")) {
 		menu();
 		
 		userInput = scan.nextInt();
 		userSelection(scan, userInput);
 		
-		System.out.println("Would you like to continue?(y/n)");
-		scan.nextLine();
-		String contInput = scan.nextLine();
-		if(contInput.equalsIgnoreCase("n")) {
-			cont = false;
-		}
+		cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
 	}
 	public static void menu() {
