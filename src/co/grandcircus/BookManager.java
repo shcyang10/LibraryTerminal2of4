@@ -10,7 +10,7 @@ public final class BookManager {
 	public String getDisplayString(String author) {
 		String ret = "\n";
 		for (Book book : books) {
-			if (author.equals(null) || author.equals(book.getAuthor())) {
+			if (author == null || author.equals(book.getAuthor())) {
 				ret += book.toString(); 
 				ret += "\n";
 			}
