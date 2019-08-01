@@ -36,15 +36,17 @@ public final class Library {
 		System.out.println("1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
 	}
 	public static String userSelection(Scanner scanner, int input) {
+		BookManager b = new BookManager();
 		switch(input) {
 		case 1:
 		//return readFromFile();
 		
 		case 2:
 			String str;
+			scanner.nextLine();
 			System.out.println("Type in an author");
 			str = scanner.nextLine();
-		//return	BookManager.getDisplayString(str);
+		return	b.getDisplayString(str);
 			
 		case 3:
 		//return	searchTitle();
@@ -56,14 +58,13 @@ public final class Library {
 		//return	returnBook();
 		case 6:
 			scanner.nextLine();
-			BookManager b = new BookManager();
 			String str3;
 			String str2;
 			System.out.println("Enter the title of the book: ");
 			str3 = scanner.nextLine();
 			System.out.println("Enter name of author: ");
 			str2 = scanner.nextLine();
-			b.addBook(new Book(str3, str2, "on Shelf", null));
+			b.addBook(new Book(str3, str2, "on Shelf", null, null));
 			
 		}
 		return " "; // remove this later it's not needed
