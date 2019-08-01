@@ -19,7 +19,7 @@ public class Validator {
 		}
 		return i;
 	}
-
+	
 	public static int getInt(Scanner sc, String prompt, int min, int max) {
 		int i = 0;
 		boolean isValid = false;
