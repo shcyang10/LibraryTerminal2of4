@@ -42,21 +42,29 @@ public final class Library {
 		BookManager b = new BookManager();
 		switch (userInput) {
 		case 1:
+		
 			readFromFile(bookList);
 			for (Book output : bookList) {
 				System.out.println(output);	
 				}
 			break;
 		// return readFromFile();
+
 		case 2:
 			String str;
 			scan.nextLine();
-			System.out.println("Type in an author");
+			System.out.println("Type in an author: ");
 			str = scan.nextLine();
-			b.getDisplayString(str);
-
+			String a = b.getDisplayString(str, null);
+			System.out.println(a);
+			break;
 		case 3:
-			// return searchTitle();
+			String str4;
+			scan.nextLine();
+			System.out.println("Type in a title: ");
+			str4 = scan.nextLine();
+			String t = b.getDisplayString(null, str4);
+			System.out.println(t);
 			break;
 		case 4:
 			// return checkBookOut();
