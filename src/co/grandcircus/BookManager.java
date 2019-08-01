@@ -7,11 +7,13 @@ public final class BookManager {
 	private final Vector<Book> books = new Vector<>();
 
 	// function definitions
-	public String getDisplayString() {
+	public String getDisplayString(String author) {
 		String ret = "\n";
 		for (Book book : books) {
-			ret += book.toString(); 
-			ret += "\n";
+			if (author.equals(null) || author.equals(book.getAuthor())) {
+				ret += book.toString(); 
+				ret += "\n";
+			}
 		}
 		return ret;
 	}
@@ -27,5 +29,5 @@ public final class BookManager {
 	public int getNumberFromBook(Book book) {
 		return books.indexOf(book)+1;
 	}
-	
+
 }
