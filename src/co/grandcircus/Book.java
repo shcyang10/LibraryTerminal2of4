@@ -15,4 +15,17 @@ public final class Book {
 	public String toString() {
 		return "\"" + title + "\"" + " by " + author + " (Due at " + dueAt + ")" + " (" + status + ")";
 	}
+	// getters (no setters)
+	public String getTitle() {
+		return title;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public String getDueAt() {
+		return dueAt;
+	}
+	public Status getStatus() {
+		return status;
+	}
 }
