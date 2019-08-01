@@ -6,8 +6,8 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Vector;
 
 public final class Library {
 	
@@ -60,32 +60,29 @@ public final class Library {
 		case 5:
 		//return	returnBook();
 		case 6:
+			scanner.nextLine();
+			BookManager b = new BookManager();
 			String str3;
 			String str2;
 			System.out.println("Enter the title of the book: ");
 			str3 = scanner.nextLine();
 			System.out.println("Enter name of author: ");
 			str2 = scanner.nextLine();
-			//BookManager.addBook(str, str2);
+			b.addBook(new Book(str3, str2, "on Shelf", null));
+			
 		}
 		return " "; // remove this later it's not needed
 	}
 	
-	public static void writeToFile(ArrayList<Book> bookList) {
+	public static void writeToFile(Vector<Book> books) {
         String fileName = "booklist.txt";
         Path path = Paths.get("library", fileName);
         File file = path.toFile();
         PrintWriter output = null;
         try {
             output = new PrintWriter(new FileOutputStream(file, true));
-            output.println();
-            /*
-             *
-             *
-             * add the name of array of books
-             *
-             *
-             */
+            output.println(books);
+          
         } catch (FileNotFoundException e) {
             // e.printStackTrace();
             System.out.println("Hey, contact customer service");
