@@ -1,4 +1,4 @@
-package co.grandcircus
+package co.grandcircus;
 import java.util.Vector;
 
 public final class BookManager {

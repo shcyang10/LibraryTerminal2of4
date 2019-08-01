@@ -1,5 +1,5 @@
 package co.grandcircus;
 
-public enum Catergory {
+public enum Category {
 
 }
