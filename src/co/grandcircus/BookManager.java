@@ -24,6 +24,10 @@ public final class BookManager {
 		return books.get(number-1);
 	}
 
+	public int getNumberFromBook(Book book) {
+		return books.indexOf(book)+1;
+	}
+
 	public Vector<Book> getBooksByAuthor(String bookAuthor) {
 		Vector<Book> ret = new Vector<>();
 		for (Book book : books) {

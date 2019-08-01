@@ -19,6 +19,11 @@ public final class Book {
 		return "\"" + title + "\"" + " by " + author + " (Due at " + dueAt + ")" + " (" + status + ")";
 	}
 
+	// toString() + book #
+	public String getFullTitle(BookManager bm) {
+		return toString() + " (" + bm.getNumberFromBook(this) + ")";
+	}
+
 	// getters (no setters)
 	public String getTitle() {
 		return title;
