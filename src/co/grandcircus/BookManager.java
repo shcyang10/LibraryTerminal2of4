@@ -3,7 +3,7 @@ import java.util.Vector;
 
 public final class BookManager {
 
-	// immutable list of books
+	// immutable Vector of books
 	private final Vector<Book> books = new Vector<>();
 
 	// function definitions
