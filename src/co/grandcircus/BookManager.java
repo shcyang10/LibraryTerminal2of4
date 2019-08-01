@@ -27,15 +27,5 @@ public final class BookManager {
 	public int getNumberFromBook(Book book) {
 		return books.indexOf(book)+1;
 	}
-
-	public Vector<Book> getBooksByAuthor(String bookAuthor) {
-		Vector<Book> ret = new Vector<>();
-		for (Book book : books) {
-			if (book.getAuthor() == bookAuthor) {
-				ret.add(book);
-			}
-		}
-		return ret;
-	}
-
+	
 }
