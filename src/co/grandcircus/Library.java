@@ -20,13 +20,14 @@ public class Library {
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
-					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
-			int userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
+					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Sort books by Category\n8. Exit");
+			int userInput = Validator.getInt(scan, "Select an option: ", 1, 8);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
-
 		writeToFile(b);
+
+		System.out.println("Goodbye!");
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
@@ -107,9 +108,39 @@ public class Library {
 				System.out.println("Wrong input");
 			}
 		case 7:
-			System.out.println("Goodbye!");
+			int w = Validator.getInt(scan,
+					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
+					1, 7);
+			switch (w) {
+			case 1:
+				b.getDisplayString(Category.DRAMA);
+				break;
+			case 2:
+				b.getDisplayString(Category.FANTASY);
+				break;
+			case 3:
+				b.getDisplayString(Category.FICTION);
+				break;
+			case 4:
+				b.getDisplayString(Category.NONFICTION);
+				break;
+			case 5:
+				b.getDisplayString(Category.PHILOSOPHY);
+				break;
+			case 6:
+				b.getDisplayString(Category.SCIENCE);
+				break;
+			case 7:
+				b.getDisplayString(Category.SCIENCE_FICTION);
+				break;
+			default:
+				System.out.println("Wrong input");
+			
+		case 8:
+//			System.out.println("");
 			System.exit(0);
 			break;
+			}
 		}
 		
 	}
