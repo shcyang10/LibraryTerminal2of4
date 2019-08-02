@@ -23,7 +23,7 @@ public class Library {
 					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Sort books by Category\n8. Exit");
 			int userInput = Validator.getInt(scan, "Select an option: ", 1, 8);
 			userSelection(scan, userInput, b);
-			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
+			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
 		writeToFile(b);
 
