@@ -81,7 +81,6 @@ public class Library {
 			str3 = Validator.getString(scan, "Enter the title of the book: ");
 			// System.out.println("Enter name of author: ");
 			str2 = Validator.getString(scan, "Enter name of author: ");
-			// TODO: add category choice
 			int c = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
 					1, 7);
