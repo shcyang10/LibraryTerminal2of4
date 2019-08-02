@@ -69,6 +69,19 @@ public final class BookManager {
 		books.add(book);
 	}
 
+	public boolean removeBook(Book book) {
+		if (books.contains(book)) {
+			books.remove(book);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean removeBook(int number) {
+		return removeBook(getBookByNumber(number));
+	}
+
 	public Vector<Book> getBooks() {
 		return books;
 	}
