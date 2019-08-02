@@ -19,12 +19,23 @@ public final class Book {
 	@Override
 	public String toString() {
 //		return "\"" + title + "\"" + " by " + author + " (Due at " + dueAt + ")" + " (" + status + ")";
+		
 		return String.format("%-30s %-4s %-30s %-8s %-12s %-3s %-12s %-10s", title, "by", author, "(Due at ", dueAt, ")", status, category);
 	}
 
 	// toString() + book #
 	public String getFullTitle(BookManager bm) {
-		return toString() + " (" + bm.getNumberFromBook(this) + ")";
+		String spaces= "   ";
+		double bookNum = bm.getNumberFromBook(this);
+		while (true) {
+			if (bookNum < 1) {
+				break;
+			} else {
+				bookNum /= 10;
+				spaces = spaces.substring(0, spaces.length() - 1);
+			}
+		}
+		return bm.getNumberFromBook(this) + ". " + spaces + toString();
 	}
 
 	// setters

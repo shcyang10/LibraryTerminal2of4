@@ -53,7 +53,6 @@ public final class Library {
 
 		case 2:
 			String str;
-			scan.nextLine();
 			System.out.println("Type in an author: ");
 			str = scan.nextLine();
 			String a = b.getDisplayString(str, null);
@@ -62,7 +61,6 @@ public final class Library {
 
 		case 3:
 			String str4;
-			scan.nextLine();
 			System.out.println("Type in a title: ");
 			str4 = scan.nextLine();
 			String t = b.getDisplayString(null, str4);
@@ -72,9 +70,9 @@ public final class Library {
 			// return checkBookOut();
 			break;
 		case 5:
+			break;
 			// return returnBook();
 		case 6:
-			scan.nextLine();
 			String str3;
 			String str2;
 			System.out.println("Enter the title of the book: ");
