@@ -50,6 +50,10 @@ public final class BookManager {
 		books.add(book);
 	}
 
+	public Vector<Book> getBooks() {
+		return books;
+	}
+
 	public Book getBookByNumber(int number) {
 		return books.get(number-1);
 	}
