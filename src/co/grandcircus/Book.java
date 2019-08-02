@@ -48,6 +48,10 @@ public final class Book {
 	public void setDueAt(String date) {
 		dueAt = CheckOutReturn.dueDate(date);
 	}
+
+	public void resetDueAt() {
+		dueAt = "NULL";
+	}
 	
 	// getters
 	public String getTitle() {
