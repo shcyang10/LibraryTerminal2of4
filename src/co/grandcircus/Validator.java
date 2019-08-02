@@ -3,7 +3,7 @@ package co.grandcircus;
 import java.util.Scanner;
 
 public class Validator {
-	
+
 	public static int getInt(Scanner sc, String prompt) {
 		int i = 0;
 		boolean isValid = false;
@@ -19,7 +19,7 @@ public class Validator {
 		}
 		return i;
 	}
-	
+
 	public static int getInt(Scanner sc, String prompt, int min, int max) {
 		int i = 0;
 		boolean isValid = false;
@@ -34,7 +34,6 @@ public class Validator {
 		}
 		return i;
 	}
-
 
 	public static String getString(Scanner scan, String prompt) {
 		System.out.print(prompt);

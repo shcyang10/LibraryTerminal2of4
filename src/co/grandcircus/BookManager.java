@@ -1,4 +1,5 @@
 package co.grandcircus;
+
 import java.util.Vector;
 import java.io.IOException;
 import java.io.FileNotFoundException;
@@ -9,17 +10,17 @@ public final class BookManager {
 
 	// immutable Vector of books
 	private static final Vector<Book> books = new Vector<>();
-	
+
 	// constructor: loads books
 	public BookManager() {
 		try {
-			BufferedReader br = new BufferedReader(
-				new FileReader("booklist.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("booklist.txt"));
 			try {
 				String line = br.readLine();
 				while (line != null) {
 					String[] split = line.split(",");
-					addBook(new Book(split[0], split[1], split[2], Status.valueOf(split[3]), Category.valueOf(split[4])));
+					addBook(new Book(split[0], split[1], split[2], Status.valueOf(split[3]),
+							Category.valueOf(split[4])));
 					line = br.readLine();
 				}
 			} catch (IOException e) {
@@ -39,12 +40,10 @@ public final class BookManager {
 	public String getDisplayString(String author, String title, Category category) {
 		String ret = "\n";
 		for (Book book : books) {
-			if (
-				(author == null || book.getAuthor().toLowerCase().contains(author.toLowerCase())) &&
-				(title == null || book.getTitle().toLowerCase().contains(title.toLowerCase())) &&
-				(category == null || book.getCategory() == category)
-				) {
-				ret += book.getFullTitle(this); 
+			if ((author == null || book.getAuthor().toLowerCase().contains(author.toLowerCase()))
+					&& (title == null || book.getTitle().toLowerCase().contains(title.toLowerCase()))
+					&& (category == null || book.getCategory() == category)) {
+				ret += book.getFullTitle(this);
 				ret += "\n";
 			}
 		}
@@ -70,16 +69,29 @@ public final class BookManager {
 		books.add(book);
 	}
 
+	public boolean removeBook(Book book) {
+		if (books.contains(book)) {
+			books.remove(book);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean removeBook(int number) {
+		return removeBook(getBookByNumber(number));
+	}
+
 	public Vector<Book> getBooks() {
 		return books;
 	}
 
 	public Book getBookByNumber(int number) {
-		return books.get(number-1);
+		return books.get(number - 1);
 	}
 
 	public int getNumberFromBook(Book book) {
-		return books.indexOf(book)+1;
+		return books.indexOf(book) + 1;
 	}
 
 }
