@@ -67,11 +67,21 @@ public final class Library {
 			System.out.println(t);
 			break;
 		case 4:
-			// return checkBookOut();
+			System.out.println(b.getDisplayString(null, null));
+			Status co = Status.CHECKED_OUT;
+			System.out.println("Which book title number would you like to checkout");
+			int i = scan.nextInt();
+			b.getBookByNumber(i).setStatus(co);
 			break;
+			// checkout book
 		case 5:
+			System.out.println(b.getDisplayString(null, null));
+			Status os = Status.ON_SHELF;
+			System.out.println("Which book title number would you like to return");
+			int x = scan.nextInt();
+			b.getBookByNumber(x).setStatus(os);
 			break;
-			// return returnBook();
+			// return Book
 		case 6:
 			String str3;
 			String str2;
@@ -80,6 +90,7 @@ public final class Library {
 			System.out.println("Enter name of author: ");
 			str2 = scan.nextLine();
 			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
+		// add category choice
 		}
 	}
 
