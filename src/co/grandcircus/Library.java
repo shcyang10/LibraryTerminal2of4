@@ -21,7 +21,7 @@ public class Library {
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
 					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Sort books by Category\n8. Delete book\n9. Exit");
-			int userInput = Validator.getInt(scan, "Select an option: ", 1, 8);
+			int userInput = Validator.getInt(scan, "Select an option: ", 1, 9);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
@@ -83,7 +83,7 @@ public class Library {
 			str2 = Validator.getString(scan, "Enter name of author: ");
 			// TODO: add category choice
 			int c = Validator.getInt(scan,
-					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
+					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect option: ",
 					1, 7);
 			switch (c) {
 			case 1:
@@ -114,7 +114,7 @@ public class Library {
 			break;
 		case 7:
 			int w = Validator.getInt(scan,
-					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
+					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect Option: ",
 					1, 7);
 			switch (w) {
 			case 1:
