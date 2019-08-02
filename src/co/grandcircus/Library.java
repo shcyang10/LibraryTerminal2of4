@@ -143,6 +143,7 @@ public class Library {
 			}
 			break;
 		case 8:
+			System.out.println("Goodbye!");
 			System.exit(0);
 			break;
 		}
