@@ -25,7 +25,11 @@ public final class BookManager {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			br.close();
+			try {
+				br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		} catch (FileNotFoundException e) {
 			System.out.println("ERROR: booklist.txt was not found!");
 		}
