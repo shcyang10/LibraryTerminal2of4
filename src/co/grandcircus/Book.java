@@ -18,7 +18,7 @@ public final class Book {
 
 	@Override
 	public String toString() {
-		return String.format("%-30s %-4s %-30s %-6s %-10s%-2s %-12s %-10s", title, "by", author, "(Due at", dueAt, ")",
+		return String.format("%-30s %-4s %-30s %-8s %-10s%-2s %-12s %-10s", title, "by", author, "(Due at", dueAt, ")",
 				status, category);
 	}
 
