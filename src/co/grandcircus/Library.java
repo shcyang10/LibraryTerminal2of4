@@ -8,35 +8,36 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public final class Library {
+public class Library {
 
 	public static void main(String[] args) {
+		
 		Scanner scan = new Scanner(System.in);
-
-		int userInput;
-		String cont = "y";
 		BookManager b = new BookManager();
+		String cont = "y";
 
-		System.out.println("Welcome to the Library of Alexandria");
+		System.out.println("Welcome to the Library of Alexandria!");
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
 					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
-			userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
+			int userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
+		
 		writeToFile(b);
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
 		switch (userInput) {
+		
+		// show all books
 		case 1:
-
 			System.out.println(b.getDisplayString(null, null));
 			break;
-		// return readFromFile();
 
+		// show all books w/ author x
 		case 2:
 			String str;
 			System.out.println("Type in an author: ");
@@ -44,7 +45,7 @@ public final class Library {
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
-
+		// show all books w/ title x
 		case 3:
 			String str4;
 			System.out.println("Type in a title: ");
@@ -52,6 +53,7 @@ public final class Library {
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
+		// checkout book
 		case 4:
 			System.out.println(b.getDisplayString(null, null));
 			Status co = Status.CHECKED_OUT;
@@ -59,7 +61,7 @@ public final class Library {
 			int i = scan.nextInt();
 			b.getBookByNumber(i).setStatus(co);
 			break;
-		// checkout book
+		// return book
 		case 5:
 			System.out.println(b.getDisplayString(null, null));
 			Status os = Status.ON_SHELF;
@@ -67,7 +69,7 @@ public final class Library {
 			int x = scan.nextInt();
 			b.getBookByNumber(x).setStatus(os);
 			break;
-		// return Book
+		// return book
 		case 6:
 			String str3;
 			String str2;
@@ -76,7 +78,7 @@ public final class Library {
 			System.out.println("Enter name of author: ");
 			str2 = scan.nextLine();
 			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
-			// add category choice
+			// TODO: add category choice
 		}
 	}
 
@@ -98,7 +100,6 @@ public final class Library {
 			}
 
 		} catch (FileNotFoundException e) {
-		
 			System.out.println("File not found.");
 		} finally {
 			output.close();
