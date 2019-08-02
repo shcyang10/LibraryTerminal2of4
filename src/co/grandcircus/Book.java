@@ -41,6 +41,10 @@ public final class Book {
 		status = _new;
 	}
 
+	public void setCategory(Category _new) {
+		category = _new;
+	}
+
 	public void setDueAt(String date) {
 		dueAt = date;
 	}
