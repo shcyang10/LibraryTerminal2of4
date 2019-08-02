@@ -20,7 +20,7 @@ public class Library {
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
-					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Sort books by Category\n8. Exit");
+					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Sort books by Category\n8. Delete book\n9. Exit");
 			int userInput = Validator.getInt(scan, "Select an option: ", 1, 8);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
@@ -81,6 +81,7 @@ public class Library {
 			str3 = Validator.getString(scan, "Enter the title of the book: ");
 			// System.out.println("Enter name of author: ");
 			str2 = Validator.getString(scan, "Enter name of author: ");
+			// TODO: add category choice
 			int c = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
 					1, 7);
@@ -143,6 +144,11 @@ public class Library {
 			}
 			break;
 		case 8:
+			int m = Validator.getInt(scan,("Which book number would you like to delete: "));
+			b.removeBook(m);
+			
+			break;
+		case 9:
 			System.out.println("Goodbye!");
 			System.exit(0);
 			break;
