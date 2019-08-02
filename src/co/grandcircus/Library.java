@@ -53,7 +53,7 @@ public final class Library {
 			scan.nextLine();
 			System.out.println("Type in an author");
 			str = scan.nextLine();
-			b.getDisplayString(str);
+//			b.getDisplayString(str);
 
 		case 3:
 			// return searchTitle();
