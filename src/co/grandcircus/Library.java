@@ -1,17 +1,14 @@
 package co.grandcircus;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
-import java.util.Vector;
 
 public final class Library {
 
@@ -38,6 +35,7 @@ public final class Library {
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
+		writeToFile(b);
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
@@ -106,14 +104,22 @@ public final class Library {
 //		}
 //	}
 
-	public static void writeToFile(ArrayList<Book> bookList) {
+	public static void writeToFile(BookManager b) {
 		String fileName = "booklist.txt";
-		Path path = Paths.get("library", fileName);
+		Path path = Paths.get(fileName);
 		File file = path.toFile();
 		PrintWriter output = null;
 		try {
-			output = new PrintWriter(new FileOutputStream(file, true));
-			output.println();
+			output = new PrintWriter(new FileOutputStream(file, false));
+			for (Book b1 : b.getBooks()) {
+			String b2 = b1.toString().replaceAll(" {2,}", "").replaceAll("(by)|(\\(Due at)|(\\))", ",")
+					.replaceAll("(on shelf)", "ON_SHELF,").replaceAll("(checked out)", "CHECKED_OUT,")
+					.replaceAll("(nonfiction)", "NONFICTION").replaceAll("(science fiction)", "SCIENCE_FICTION")
+					.replaceAll("(fiction)", "FICTION").replaceAll("(fantasy)", "FANTASY")
+					.replaceAll("(science)", "SCIENCE").replaceAll("(philosophy)", "PHILOSOPHY")
+					.replaceAll("(drama)", "DRAMA");
+				output.println(b2);
+			}
 			/*
 			 *
 			 *
@@ -123,7 +129,7 @@ public final class Library {
 			 */
 		} catch (FileNotFoundException e) {
 			// e.printStackTrace();
-			System.out.println("Hey, contact customer service");
+			System.out.println("File not found.");
 		} finally {
 			output.close();
 		}
