@@ -106,7 +106,12 @@ public class Library {
 			default:
 				System.out.println("Wrong input");
 			}
+		case 7:
+			System.out.println("Goodbye!");
+			System.exit(0);
+			break;
 		}
+		
 	}
 
 	public static void writeToFile(BookManager b) {
