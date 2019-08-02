@@ -17,13 +17,14 @@ public final class Book {
 	}
 
 	@Override
-	public String toString() {		
-		return String.format("%-30s %-4s %-30s %-8s %-12s %-3s %-12s %-10s", title, "by", author, "(Due at ", dueAt, ")", status, category);
+	public String toString() {
+		return String.format("%-30s %-4s %-30s %-6s %-10s%-2s %-12s %-10s", title, "by", author, "(Due at", dueAt, ")",
+				status, category);
 	}
 
 	// toString() + book #
 	public String getFullTitle(BookManager bm) {
-		String spaces= "   ";
+		String spaces = "   ";
 		double bookNum = bm.getNumberFromBook(this);
 		while (true) {
 			if (bookNum < 1) {
@@ -52,20 +53,24 @@ public final class Book {
 	public void resetDueAt() {
 		dueAt = "NULL";
 	}
-	
+
 	// getters
 	public String getTitle() {
 		return title;
 	}
+
 	public String getAuthor() {
 		return author;
 	}
+
 	public String getDueAt() {
 		return dueAt;
 	}
+
 	public Status getStatus() {
 		return status;
 	}
+
 	public Category getCategory() {
 		return category;
 	}
