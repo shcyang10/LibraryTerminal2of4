@@ -27,7 +27,16 @@ public final class Book {
 		return toString() + " (" + bm.getNumberFromBook(this) + ")";
 	}
 
-	// getters (no setters)
+	// setters
+	public void setStatus(Status _new) {
+		status = _new;
+	}
+
+	public void setDueAt(String date) {
+		dueAt = date;
+	}
+	
+	// getters
 	public String getTitle() {
 		return title;
 	}
