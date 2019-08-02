@@ -20,13 +20,12 @@ public class Library {
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
-					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Quit");
-			int userInput = Validator.getInt(scan, "Select an option: ", 1, 7);
+					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
+			int userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
 		
-		System.out.println("Goodbye.");
 		writeToFile(b);
 	}
 
@@ -78,14 +77,39 @@ public class Library {
 			str3 = scan.nextLine();
 			System.out.println("Enter name of author: ");
 			str2 = scan.nextLine();
-			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
+//			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
 			// TODO: add category choice
-			break;
-		// quit 
-		case 7:
-			System.out.println("Goodbye.");
-			System.exit(0);
-			break;
+			Category z = null ;
+			boolean check = true;
+			System.out.println("Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction");
+			int c = scan.nextInt();
+			while (check) {
+			if(c==1) {
+				 z = Category.DRAMA;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else if (c==2) {
+				z = Category.FANTASY;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else if(c==3) {
+				z = Category.FICTION;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else if(c==4) {
+				z = Category.NONFICTION;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else if(c==5) {
+				z = Category.PHILOSOPHY;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else if(c==6) {
+				z = Category.SCIENCE;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else if (c==7) {
+				z = Category.SCIENCE_FICTION;
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
+			}else {
+				System.out.println("Wrong input");
+				check = false;
+			}
+			}
 		}
 	}
 
