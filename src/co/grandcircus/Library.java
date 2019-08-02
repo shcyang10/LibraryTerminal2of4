@@ -135,12 +135,12 @@ public class Library {
 				break;
 			default:
 				System.out.println("Wrong input");
+			}
 			
 		case 8:
 //			System.out.println("");
 			System.exit(0);
 			break;
-			}
 		}
 		
 	}
