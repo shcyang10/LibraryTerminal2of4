@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Library {
 
 	public static void main(String[] args) {
-		
+
 		Scanner scan = new Scanner(System.in);
 		BookManager b = new BookManager();
 		String cont = "y";
@@ -20,19 +20,18 @@ public class Library {
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
-					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Quit");
-			int userInput = Validator.getInt(scan, "Select an option: ", 1, 7);
+					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
+			int userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
-		
-		System.out.println("Goodbye.");
+
 		writeToFile(b);
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
 		switch (userInput) {
-		
+
 		// show all books
 		case 1:
 			System.out.println(b.getDisplayString(null, null));
@@ -41,16 +40,16 @@ public class Library {
 		// show all books w/ author x
 		case 2:
 			String str;
-			System.out.println("Type in an author: ");
-			str = scan.nextLine();
+			//System.out.println("Type in an author: ");
+			str = Validator.getString(scan, "Type in an author: ");
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
 		// show all books w/ title x
 		case 3:
 			String str4;
-			System.out.println("Type in a title: ");
-			str4 = scan.nextLine();
+			//System.out.println("Type in a title: ");
+			str4 = Validator.getString(scan, "Type in a title: ");
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
@@ -58,34 +57,55 @@ public class Library {
 		case 4:
 			System.out.println(b.getDisplayString(null, null));
 			Status co = Status.CHECKED_OUT;
-			System.out.println("Which book title number would you like to checkout");
-			int i = scan.nextInt();
+			//System.out.println("Which book title number would you like to checkout");
+			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
 			b.getBookByNumber(i).setStatus(co);
 			break;
 		// return book
 		case 5:
 			System.out.println(b.getDisplayString(null, null));
 			Status os = Status.ON_SHELF;
-			System.out.println("Which book title number would you like to return");
-			int x = scan.nextInt();
+			//System.out.println("Which book title number would you like to return");
+			int x = Validator.getInt(scan, "Which book title number would you like to return");
 			b.getBookByNumber(x).setStatus(os);
 			break;
 		// return book
 		case 6:
 			String str3;
 			String str2;
-			System.out.println("Enter the title of the book: ");
-			str3 = scan.nextLine();
-			System.out.println("Enter name of author: ");
-			str2 = scan.nextLine();
-			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
+			//System.out.println("Enter the title of the book: ");
+			str3 = Validator.getString(scan, "Enter the title of the book: ");
+			//System.out.println("Enter name of author: ");
+			str2 = Validator.getString(scan, "Enter name of author: ");
 			// TODO: add category choice
-			break;
-		// quit 
-		case 7:
-			System.out.println("Goodbye.");
-			System.exit(0);
-			break;
+			int c = Validator.getInt(scan,
+					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
+					1, 7);
+			switch (c) {
+			case 1:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.DRAMA));
+				break;
+			case 2:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FANTASY));
+				break;
+			case 3:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
+				break;
+			case 4:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.NONFICTION));
+				break;
+			case 5:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.PHILOSOPHY));
+				break;
+			case 6:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE));
+				break;
+			case 7:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE_FICTION));
+				break;
+			default:
+				System.out.println("Wrong input");
+			}
 		}
 	}
 
