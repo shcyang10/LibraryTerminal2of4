@@ -61,6 +61,8 @@ public class Library {
 			// System.out.println("Which book title number would you like to checkout");
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
 			b.getBookByNumber(i).setStatus(co);
+			String date = null;
+			b.getBookByNumber(i).setDueAt(date);
 			break;
 		// return book
 		case 5:
@@ -69,6 +71,7 @@ public class Library {
 			// System.out.println("Which book title number would you like to return");
 			int x = Validator.getInt(scan, "Which book title number would you like to return");
 			b.getBookByNumber(x).setStatus(os);
+			b.getBookByNumber(x).resetDueAt();
 			break;
 		// return book
 		case 6:
