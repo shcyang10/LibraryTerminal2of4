@@ -46,7 +46,7 @@ public final class Book {
 	}
 
 	public void setDueAt(String date) {
-		dueAt = date;
+		dueAt = CheckOutReturn.dueDate(date);
 	}
 	
 	// getters
