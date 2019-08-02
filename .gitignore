@@ -16,5 +16,11 @@
 log/
 target/
 
+# KDE
+.directory
+
+# testing
+src/*.txt
+
 *.class
 /bin

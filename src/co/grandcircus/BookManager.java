@@ -43,7 +43,6 @@ public final class BookManager {
 			}
 		}
 		return ret;
-		
 	}
 
 	public void addBook(Book book) {
