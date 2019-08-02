@@ -150,6 +150,7 @@ public class Library {
 			break;
 		case 9:
 			System.out.println("Goodbye!");
+			writeToFile(b);
 			System.exit(0);
 			break;
 		}
