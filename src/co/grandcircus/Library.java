@@ -43,7 +43,7 @@ public class Library {
 			String str;
 			//System.out.println("Type in an author: ");
 			str = Validator.getString(scan, "Type in an author: ");
-			String a = b.getDisplayString(str, null, null);
+			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
 		// show all books w/ title x
@@ -51,7 +51,7 @@ public class Library {
 			String str4;
 			//System.out.println("Type in a title: ");
 			str4 = Validator.getString(scan, "Type in a title: ");
-			String t = b.getDisplayString(null, str4, null);
+			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
 		// checkout book

@@ -56,6 +56,11 @@ public final class BookManager {
 		return getDisplayString(null, null, null);
 	}
 
+	// syntactic sugar for getDisplayString(String|null, String|null, null)
+	public String getDisplayString(String author, String title) {
+		return getDisplayString(author, title, null);
+	}
+
 	public void addBook(Book book) {
 		books.add(book);
 	}
