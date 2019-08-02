@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Library {
 
 	public static void main(String[] args) {
-		
+
 		Scanner scan = new Scanner(System.in);
 		BookManager b = new BookManager();
 		String cont = "y";
@@ -25,13 +25,13 @@ public class Library {
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
-		
+
 		writeToFile(b);
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
 		switch (userInput) {
-		
+
 		// show all books
 		case 1:
 			System.out.println(b.getDisplayString(null, null));
@@ -77,38 +77,34 @@ public class Library {
 			str3 = scan.nextLine();
 			System.out.println("Enter name of author: ");
 			str2 = scan.nextLine();
-//			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
 			// TODO: add category choice
-			Category z = null ;
-			boolean check = true;
-			System.out.println("Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction");
-			int c = scan.nextInt();
-			while (check) {
-			if(c==1) {
-				 z = Category.DRAMA;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else if (c==2) {
-				z = Category.FANTASY;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else if(c==3) {
-				z = Category.FICTION;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else if(c==4) {
-				z = Category.NONFICTION;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else if(c==5) {
-				z = Category.PHILOSOPHY;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else if(c==6) {
-				z = Category.SCIENCE;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else if (c==7) {
-				z = Category.SCIENCE_FICTION;
-				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, z));
-			}else {
+			int c = Validator.getInt(scan,
+					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
+					1, 7);
+			switch (c) {
+			case 1:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.DRAMA));
+				break;
+			case 2:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FANTASY));
+				break;
+			case 3:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
+				break;
+			case 4:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.NONFICTION));
+				break;
+			case 5:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.PHILOSOPHY));
+				break;
+			case 6:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE));
+				break;
+			case 7:
+				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE_FICTION));
+				break;
+			default:
 				System.out.println("Wrong input");
-				check = false;
-			}
 			}
 		}
 	}

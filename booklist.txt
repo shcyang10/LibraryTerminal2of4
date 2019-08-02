@@ -14,3 +14,4 @@ Invocation of the Sea,Lars Dromflet,NULL,ON_SHELF,SCIENCE
 Hymns of Gaia,Guy Ribald,NULL,ON_SHELF,SCIENCE
 Twilight of a New Age,Brian Hudson,NULL,ON_SHELF,SCIENCE_FICTION
 Another Book,Bob Man,NULL,ON_SHELF,FICTION
+More Adventures of Bob,Bob Jr.,NULL,ON_SHELF,FANTASY
