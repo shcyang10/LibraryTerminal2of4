@@ -34,7 +34,7 @@ public class Library {
 
 		// show all books
 		case 1:
-			System.out.println(b.getDisplayString(null, null));
+			System.out.println(b.getDisplayString(null, null, null));
 			break;
 
 		// show all books w/ author x
@@ -42,7 +42,7 @@ public class Library {
 			String str;
 			//System.out.println("Type in an author: ");
 			str = Validator.getString(scan, "Type in an author: ");
-			String a = b.getDisplayString(str, null);
+			String a = b.getDisplayString(str, null, null);
 			System.out.println(a);
 			break;
 		// show all books w/ title x
@@ -50,12 +50,12 @@ public class Library {
 			String str4;
 			//System.out.println("Type in a title: ");
 			str4 = Validator.getString(scan, "Type in a title: ");
-			String t = b.getDisplayString(null, str4);
+			String t = b.getDisplayString(null, str4, null);
 			System.out.println(t);
 			break;
 		// checkout book
 		case 4:
-			System.out.println(b.getDisplayString(null, null));
+			System.out.println(b.getDisplayString(null, null, null));
 			Status co = Status.CHECKED_OUT;
 			//System.out.println("Which book title number would you like to checkout");
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
@@ -63,7 +63,7 @@ public class Library {
 			break;
 		// return book
 		case 5:
-			System.out.println(b.getDisplayString(null, null));
+			System.out.println(b.getDisplayString(null, null, null));
 			Status os = Status.ON_SHELF;
 			//System.out.println("Which book title number would you like to return");
 			int x = Validator.getInt(scan, "Which book title number would you like to return");

@@ -31,17 +31,24 @@ public final class BookManager {
 	}
 
 	// function definitions
-	public String getDisplayString(String author, String title) {
+	public String getDisplayString(String author, String title, Category category) {
 		String ret = "\n";
 		for (Book book : books) {
 			if (
 				(author == null || book.getAuthor().toLowerCase().contains(author.toLowerCase())) &&
-				(title == null || book.getTitle().toLowerCase().contains(title.toLowerCase()))) {
+				(title == null || book.getTitle().toLowerCase().contains(title.toLowerCase())) &&
+				(category == null || book.getCategory() == category)
+				) {
 				ret += book.getFullTitle(this); 
 				ret += "\n";
 			}
 		}
 		return ret;
+	}
+
+	// syntactic sugar for getDisplayString(null, null, category)
+	public String getDisplayString(Category category) {
+		return getDisplayString(null, null, category);
 	}
 
 	public void addBook(Book book) {
