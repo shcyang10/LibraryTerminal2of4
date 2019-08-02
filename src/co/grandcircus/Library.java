@@ -40,16 +40,16 @@ public class Library {
 		// show all books w/ author x
 		case 2:
 			String str;
-			System.out.println("Type in an author: ");
-			str = scan.nextLine();
+			//System.out.println("Type in an author: ");
+			str = Validator.getString(scan, "Type in an author: ");
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
 		// show all books w/ title x
 		case 3:
 			String str4;
-			System.out.println("Type in a title: ");
-			str4 = scan.nextLine();
+			//System.out.println("Type in a title: ");
+			str4 = Validator.getString(scan, "Type in a title: ");
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
@@ -57,26 +57,26 @@ public class Library {
 		case 4:
 			System.out.println(b.getDisplayString(null, null));
 			Status co = Status.CHECKED_OUT;
-			System.out.println("Which book title number would you like to checkout");
-			int i = scan.nextInt();
+			//System.out.println("Which book title number would you like to checkout");
+			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
 			b.getBookByNumber(i).setStatus(co);
 			break;
 		// return book
 		case 5:
 			System.out.println(b.getDisplayString(null, null));
 			Status os = Status.ON_SHELF;
-			System.out.println("Which book title number would you like to return");
-			int x = scan.nextInt();
+			//System.out.println("Which book title number would you like to return");
+			int x = Validator.getInt(scan, "Which book title number would you like to return");
 			b.getBookByNumber(x).setStatus(os);
 			break;
 		// return book
 		case 6:
 			String str3;
 			String str2;
-			System.out.println("Enter the title of the book: ");
-			str3 = scan.nextLine();
-			System.out.println("Enter name of author: ");
-			str2 = scan.nextLine();
+			//System.out.println("Enter the title of the book: ");
+			str3 = Validator.getString(scan, "Enter the title of the book: ");
+			//System.out.println("Enter name of author: ");
+			str2 = Validator.getString(scan, "Enter name of author: ");
 			// TODO: add category choice
 			int c = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",

@@ -35,8 +35,8 @@ public final class BookManager {
 		String ret = "\n";
 		for (Book book : books) {
 			if (
-				(author == null || author.equals(book.getAuthor())) &&
-				(title == null || book.getTitle().contains(title))) {
+				(author == null || author.equalsIgnoreCase(book.getAuthor())) &&
+				(title == null || book.getTitle().toLowerCase().contains(title.toLowerCase()))) {
 				ret += book.getFullTitle(this); 
 				ret += "\n";
 			}
