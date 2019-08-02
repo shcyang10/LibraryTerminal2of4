@@ -20,12 +20,13 @@ public class Library {
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
-					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book");
-			int userInput = Validator.getInt(scan, "Select an option: ", 1, 6);
+					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Quit");
+			int userInput = Validator.getInt(scan, "Select an option: ", 1, 7);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue?(y/n) ", "[YyNn]");
 		}
 		
+		System.out.println("Goodbye.");
 		writeToFile(b);
 	}
 
@@ -79,6 +80,12 @@ public class Library {
 			str2 = scan.nextLine();
 			b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.FICTION));
 			// TODO: add category choice
+			break;
+		// quit 
+		case 7:
+			System.out.println("Goodbye.");
+			System.exit(0);
+			break;
 		}
 	}
 
