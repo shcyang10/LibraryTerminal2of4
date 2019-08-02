@@ -106,7 +106,8 @@ public class Library {
 				break;
 			default:
 				System.out.println("Wrong input");
-			}
+				break;
+			}break;
 		case 7:
 			int w = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
@@ -135,7 +136,8 @@ public class Library {
 				break;
 			default:
 				System.out.println("Wrong input");
-			}
+				break;
+			}break;
 			
 		case 8:
 //			System.out.println("");
