@@ -41,7 +41,7 @@ public class Library {
 		// show all books w/ author x
 		case 2:
 			String str;
-			//System.out.println("Type in an author: ");
+			// System.out.println("Type in an author: ");
 			str = Validator.getString(scan, "Type in an author: ");
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
@@ -49,7 +49,7 @@ public class Library {
 		// show all books w/ title x
 		case 3:
 			String str4;
-			//System.out.println("Type in a title: ");
+			// System.out.println("Type in a title: ");
 			str4 = Validator.getString(scan, "Type in a title: ");
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
@@ -58,7 +58,7 @@ public class Library {
 		case 4:
 			System.out.println(b.getDisplayString());
 			Status co = Status.CHECKED_OUT;
-			//System.out.println("Which book title number would you like to checkout");
+			// System.out.println("Which book title number would you like to checkout");
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
 			b.getBookByNumber(i).setStatus(co);
 			break;
@@ -66,7 +66,7 @@ public class Library {
 		case 5:
 			System.out.println(b.getDisplayString());
 			Status os = Status.ON_SHELF;
-			//System.out.println("Which book title number would you like to return");
+			// System.out.println("Which book title number would you like to return");
 			int x = Validator.getInt(scan, "Which book title number would you like to return");
 			b.getBookByNumber(x).setStatus(os);
 			break;
@@ -74,9 +74,9 @@ public class Library {
 		case 6:
 			String str3;
 			String str2;
-			//System.out.println("Enter the title of the book: ");
+			// System.out.println("Enter the title of the book: ");
 			str3 = Validator.getString(scan, "Enter the title of the book: ");
-			//System.out.println("Enter name of author: ");
+			// System.out.println("Enter name of author: ");
 			str2 = Validator.getString(scan, "Enter name of author: ");
 			// TODO: add category choice
 			int c = Validator.getInt(scan,
@@ -107,44 +107,43 @@ public class Library {
 			default:
 				System.out.println("Wrong input");
 				break;
-			}break;
+			}
+			break;
 		case 7:
 			int w = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction",
 					1, 7);
 			switch (w) {
 			case 1:
-				b.getDisplayString(Category.DRAMA);
+				System.out.println(b.getDisplayString(Category.DRAMA));
 				break;
 			case 2:
-				b.getDisplayString(Category.FANTASY);
+				System.out.println(b.getDisplayString(Category.FANTASY));
 				break;
 			case 3:
-				b.getDisplayString(Category.FICTION);
+				System.out.println(b.getDisplayString(Category.FICTION));
 				break;
 			case 4:
-				b.getDisplayString(Category.NONFICTION);
+				System.out.println(b.getDisplayString(Category.NONFICTION));
 				break;
 			case 5:
-				b.getDisplayString(Category.PHILOSOPHY);
+				System.out.println(b.getDisplayString(Category.PHILOSOPHY));
 				break;
 			case 6:
-				b.getDisplayString(Category.SCIENCE);
+				System.out.println(b.getDisplayString(Category.SCIENCE));
 				break;
 			case 7:
-				b.getDisplayString(Category.SCIENCE_FICTION);
+				System.out.println(b.getDisplayString(Category.SCIENCE_FICTION));
 				break;
 			default:
 				System.out.println("Wrong input");
 				break;
-			}break;
-			
+			}
+			break;
 		case 8:
-//			System.out.println("");
 			System.exit(0);
 			break;
 		}
-		
 	}
 
 	public static void writeToFile(BookManager b) {
