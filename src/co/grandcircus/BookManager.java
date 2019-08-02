@@ -1,6 +1,5 @@
 package co.grandcircus;
 import java.util.Vector;
-import java.nio.file.Paths;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
