@@ -1,5 +1,4 @@
 The Sun Also Rises,Ernest Hemingway, NULL,ON_SHELF,FICTION
-
 Les Miserables,Victor Hugo,NULL,ON_SHELF,DRAMA
 Stranger in a Strange Land,Robert Heinlein,NULL,ON_SHELF,SCIENCE_FICTION
 Beyond Good and Evil,Friedrich Nietzsche,NULL,ON_SHELF,PHILOSOPHY
