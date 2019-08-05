@@ -84,21 +84,21 @@ public class Library {
 
 		// show all books w/ author x
 		case 2:
-			String str = Validator.getString(scan, "Type in an author: ");
+			String str = Validator.getString(scan, "\nType in an author: ");
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
 
 		// show all books w/ title x
 		case 3:
-			String str4 = Validator.getString(scan, "Type in a title: ");
+			String str4 = Validator.getString(scan, "\nType in a title: ");
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
 
 		// input to check book out
 		case 4:
-
+			System.out.println("\nThe Book List of Alexandria.");
 			System.out.println(b.getDisplayString());
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n", 1,
 					b.getBooks().size());
