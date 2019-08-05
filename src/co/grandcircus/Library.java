@@ -42,7 +42,6 @@ public class Library {
 		// show all books w/ author x
 		case 2:
 			String str;
-			// System.out.println("Type in an author: ");
 			str = Validator.getString(scan, "Type in an author: ");
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
@@ -50,13 +49,11 @@ public class Library {
 		// show all books w/ title x
 		case 3:
 			String str4;
-			// System.out.println("Type in a title: ");
 			str4 = Validator.getString(scan, "Type in a title: ");
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
-		// checkout book
-
+		// input to check book out	
 		case 4:
 			System.out.println(b.getDisplayString());
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
@@ -66,11 +63,10 @@ public class Library {
 				System.out.println("Sorry that book is checked out at the moment.");
 			}else {
 			b.getBookByNumber(i).setStatus(co);
-			// System.out.println("Which book title number would you like to checkout");
 			String date = null;
 			b.getBookByNumber(i).setDueAt(date);}
 			break;
-		// return book
+		// input to return book
 		case 5:
 			System.out.println(b.getDisplayString());
 			Status os = Status.ON_SHELF;
@@ -79,19 +75,15 @@ public class Library {
 			if(ch.equals(os)) {
 				System.out.println("That book has already been returned.");
 			}
-			// System.out.println("Which book title number would you like to return");
 			b.getBookByNumber(x).setStatus(os);
 			b.getBookByNumber(x).resetDueAt();
 			break;
-		// return book
+		// adding book 
 		case 6:
 			String str3;
 			String str2;
-			// System.out.println("Enter the title of the book: ");
 			str3 = Validator.getString(scan, "Enter the title of the book: ");
-			// System.out.println("Enter name of author: ");
 			str2 = Validator.getString(scan, "Enter name of author: ");
-			// TODO: add category choice
 			int c = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect option: ",
 					1, 7);
@@ -122,6 +114,7 @@ public class Library {
 				break;
 			}
 			break;
+		// sort by category	
 		case 7:
 			int w = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect Option: ",
@@ -153,6 +146,7 @@ public class Library {
 				break;
 			}
 			break;
+		// deleting book
 		case 8:
 			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
 			b.removeBook(m);
