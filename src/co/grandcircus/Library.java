@@ -64,7 +64,9 @@ public class Library {
 			}else {
 			b.getBookByNumber(i).setStatus(co);
 			String date = null;
-			b.getBookByNumber(i).setDueAt(date);}
+			b.getBookByNumber(i).setDueAt(date);
+			System.out.println(b.getBookByNumber(i));
+			}
 			break;
 
 		// input to return book
@@ -75,9 +77,11 @@ public class Library {
 			Status ch = b.getBookByNumber(x).getStatus();
 			if(ch.equals(os)) {
 				System.out.println("That book has already been returned.");
-			}
+			}else{
 			b.getBookByNumber(x).setStatus(os);
 			b.getBookByNumber(x).resetDueAt();
+			System.out.println(b.getBookByNumber(x));
+			}
 			break;
 
 		// adding book
@@ -150,6 +154,7 @@ public class Library {
 
 		// deleting book
 		case 8:
+			System.out.println(b.getDisplayString());
 			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
 			b.removeBook(m);
 			break;
