@@ -46,6 +46,7 @@ public class Library {
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
+
 		// show all books w/ title x
 		case 3:
 			String str4;
@@ -53,7 +54,8 @@ public class Library {
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
-		// input to check book out	
+
+		// input to check book out
 		case 4:
 			System.out.println(b.getDisplayString());
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
@@ -66,6 +68,7 @@ public class Library {
 			String date = null;
 			b.getBookByNumber(i).setDueAt(date);}
 			break;
+
 		// input to return book
 		case 5:
 			System.out.println(b.getDisplayString());
@@ -78,7 +81,8 @@ public class Library {
 			b.getBookByNumber(x).setStatus(os);
 			b.getBookByNumber(x).resetDueAt();
 			break;
-		// adding book 
+
+		// adding book
 		case 6:
 			String str3;
 			String str2;
@@ -114,7 +118,8 @@ public class Library {
 				break;
 			}
 			break;
-		// sort by category	
+
+		// sort by category
 		case 7:
 			int w = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect Option: ",
@@ -146,11 +151,13 @@ public class Library {
 				break;
 			}
 			break;
+
 		// deleting book
 		case 8:
 			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
 			b.removeBook(m);
 			break;
+
 		case 9:
 			System.out.println(GOODBYE_MSG);
 			writeToFile(b);
