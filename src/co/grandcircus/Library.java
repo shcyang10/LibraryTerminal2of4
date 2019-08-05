@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class Library {
 
+	final static String GOODBYE_MSG = "Goodbye! Thank you for coming to the Library of Alexandria.";
+	
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
@@ -26,8 +28,7 @@ public class Library {
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
 		writeToFile(b);
-
-		System.out.println("Goodbye!");
+		System.out.println(GOODBYE_MSG);
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
@@ -55,21 +56,30 @@ public class Library {
 			System.out.println(t);
 			break;
 		// checkout book
+
 		case 4:
 			System.out.println(b.getDisplayString());
+			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
 			Status co = Status.CHECKED_OUT;
-			// System.out.println("Which book title number would you like to checkout");
-			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
+			 Status q =b.getBookByNumber(i).getStatus();
+			 if(q.equals(co)) {
+				System.out.println("Sorry that book is checked out at the moment.");
+			}else {
 			b.getBookByNumber(i).setStatus(co);
+			// System.out.println("Which book title number would you like to checkout");
 			String date = null;
-			b.getBookByNumber(i).setDueAt(date);
+			b.getBookByNumber(i).setDueAt(date);}
 			break;
 		// return book
 		case 5:
 			System.out.println(b.getDisplayString());
 			Status os = Status.ON_SHELF;
+			int x = Validator.getInt(scan, "Which book title number would you like to return?\n");
+			Status ch = b.getBookByNumber(x).getStatus();
+			if(ch.equals(os)) {
+				System.out.println("That book has already been returned.");
+			}
 			// System.out.println("Which book title number would you like to return");
-			int x = Validator.getInt(scan, "Which book title number would you like to return");
 			b.getBookByNumber(x).setStatus(os);
 			b.getBookByNumber(x).resetDueAt();
 			break;
@@ -108,7 +118,7 @@ public class Library {
 				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE_FICTION));
 				break;
 			default:
-				System.out.println("Wrong input");
+				System.out.println("Wrong input!");
 				break;
 			}
 			break;
@@ -139,17 +149,16 @@ public class Library {
 				System.out.println(b.getDisplayString(Category.SCIENCE_FICTION));
 				break;
 			default:
-				System.out.println("Wrong input");
+				System.out.println("Wrong input!");
 				break;
 			}
 			break;
 		case 8:
-			int m = Validator.getInt(scan,("Which book number would you like to delete: "));
+			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
 			b.removeBook(m);
-			
 			break;
 		case 9:
-			System.out.println("Goodbye!");
+			System.out.println(GOODBYE_MSG);
 			writeToFile(b);
 			System.exit(0);
 			break;
