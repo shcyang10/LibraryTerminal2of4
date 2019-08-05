@@ -56,51 +56,41 @@ public class Library {
 
 		// input to check book out
 		case 4:
-			boolean cont2 = false;
-			do {
-				System.out.println(b.getDisplayString());
-				int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
-				Status co = Status.CHECKED_OUT;
-				Status q = b.getBookByNumber(i).getStatus();
-				if (i > 0 && i <= b.getBooks().size()) {
-					cont2 =true;
-					if (q.equals(co)) {
-						System.out.println("Sorry that book is checked out at the moment.\n");
-					} else {
-						b.getBookByNumber(i).setStatus(co);
-						String date = null;
-						b.getBookByNumber(i).setDueAt(date);
-						System.out.println(b.getBookByNumber(i));
-						System.out.println("Please remember to return the book on time.\n");
-					}
-				} else {
-					System.out.println("Please enter a number from the list.");
-				}
-			} while (cont2 == false);
+
+			System.out.println(b.getDisplayString());
+			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n", 1,
+					b.getBooks().size());
+			Status co = Status.CHECKED_OUT;
+			Status q = b.getBookByNumber(i).getStatus();
+
+			if (q.equals(co)) {
+				System.out.println("Sorry that book is checked out at the moment.\n");
+			} else {
+				b.getBookByNumber(i).setStatus(co);
+				String date = null;
+				b.getBookByNumber(i).setDueAt(date);
+				System.out.println(b.getBookByNumber(i));
+				System.out.println("Please remember to return the book on time.\n");
+			}
+
 			break;
 
 		// input to return book
 		case 5:
-			boolean cont3 = false;
-			do {
-				System.out.println(b.getDisplayString());
-				Status os = Status.ON_SHELF;
-				int x = Validator.getInt(scan, "Which book title number would you like to return?\n");
-				Status ch = b.getBookByNumber(x).getStatus();
-				if (x > 0 && x <= b.getBooks().size()) {
-					cont3 =true;
-					if (ch.equals(os)) {
-						System.out.println("That book has already been returned.\n");
-					} else {
-						b.getBookByNumber(x).setStatus(os);
-						b.getBookByNumber(x).resetDueAt();
-						System.out.println(b.getBookByNumber(x));
-						System.out.println("Thank for returning the book on time.\n");
-					}
-				} else {
-					System.out.println("Please enter a number from the list.");
-				}
-			} while (cont3 == false);
+			System.out.println(b.getDisplayString());
+			Status os = Status.ON_SHELF;
+			int x = Validator.getInt(scan, "Which book title number would you like to return?\n", 1,
+					b.getBooks().size());
+			Status ch = b.getBookByNumber(x).getStatus();
+
+			if (ch.equals(os)) {
+				System.out.println("That book has already been returned.\n");
+			} else {
+				b.getBookByNumber(x).setStatus(os);
+				b.getBookByNumber(x).resetDueAt();
+				System.out.println(b.getBookByNumber(x));
+				System.out.println("Thank for returning the book on time.\n");
+			}
 			break;
 
 		// adding book
@@ -173,22 +163,15 @@ public class Library {
 
 		// deleting book
 		case 8:
-			boolean cont4 = false;
-			do {
-				System.out.println(b.getDisplayString());
-				int m = Validator.getInt(scan, ("Which book number would you like to delete?\n"));
-				if (m > 0 && m <= b.getBooks().size()) {
-					cont4 = true;
-					System.out.println(b.getBookByNumber(m));
-					String l = Validator.getStringMatchingRegex(scan,
-							"Are you sure you want to delete this book? (y/n)\n", "[YyNn]");
-					if (l.equalsIgnoreCase("y")) {
-						b.removeBook(m);
-					}
-				} else {
-					System.out.println("Please enter a number from the list.");
-				}
-			} while (cont4 == false);
+			System.out.println(b.getDisplayString());
+			int m = Validator.getInt(scan, "Which book number would you like to delete?\n", 1, b.getBooks().size());
+
+			System.out.println(b.getBookByNumber(m));
+			String l = Validator.getStringMatchingRegex(scan, "Are you sure you want to delete this book? (y/n)\n",
+					"[YyNn]");
+			if (l.equalsIgnoreCase("y")) {
+				b.removeBook(m);
+			}
 			break;
 		// quitting
 		case 9:
