@@ -34,9 +34,8 @@ public class Library {
 		System.out.println(createNewQuote());
 	}
 
-	public static Quote createNewQuote() {
-		Random r = new Random();
-		switch (r.nextInt(10)) {
+	private static Quote createNewQuote() {
+		switch ((new Random()).nextInt(10)) {
 			case 0: {
 				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
 			}
@@ -70,7 +69,7 @@ public class Library {
 		}
 	}
 
-	public static void userSelection(Scanner scan, int userInput, BookManager b) {
+	private static void userSelection(Scanner scan, int userInput, BookManager b) {
 		switch (userInput) {
 
 		// show all books
@@ -216,7 +215,7 @@ public class Library {
 		}
 	}
 
-	public static void writeToFile(BookManager b) {
+	private static void writeToFile(BookManager b) {
 		Path path = Paths.get("booklist.txt");
 		File file = path.toFile();
 		PrintWriter output = null;
