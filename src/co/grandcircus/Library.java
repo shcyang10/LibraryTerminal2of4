@@ -61,8 +61,8 @@ public class Library {
 			System.out.println(b.getDisplayString());
 			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
 			Status co = Status.CHECKED_OUT;
-			 Status q =b.getBookByNumber(i).getStatus();
-			 if(q.equals(co)) {
+			Status q =b.getBookByNumber(i).getStatus();
+			if(q.equals(co)) {
 				System.out.println("Sorry that book is checked out at the moment.");
 			}else {
 			b.getBookByNumber(i).setStatus(co);
