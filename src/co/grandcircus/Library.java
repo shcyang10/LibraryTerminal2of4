@@ -122,9 +122,6 @@ public class Library {
 			case 7:
 				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE_FICTION));
 				break;
-			default:
-				System.out.println("Wrong input!");
-				break;
 			}
 			break;
 
@@ -154,9 +151,6 @@ public class Library {
 				break;
 			case 7:
 				System.out.println(b.getDisplayString(Category.SCIENCE_FICTION));
-				break;
-			default:
-				System.out.println("Wrong input!");
 				break;
 			}
 			break;
