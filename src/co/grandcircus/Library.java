@@ -16,6 +16,7 @@ public class Library {
 
 		Scanner scan = new Scanner(System.in);
 		BookManager b = new BookManager();
+		
 		String cont = "y";
 		System.out.println("Welcome to the Library of Alexandria!");
 
@@ -154,13 +155,22 @@ public class Library {
 
 		// deleting book
 		case 8:
-			System.out.println(b.getDisplayString());
-			int m = Validator.getInt(scan, ("Which book number would you like to delete?\n"));
-			System.out.println(b.getBookByNumber(m));
-			String l = Validator.getStringMatchingRegex(scan, "Are you sure you want to delete this book? (y/n)\n", "[YyNn]");
-			if(l.equalsIgnoreCase("y")) {
-			b.removeBook(m);
-			}
+			boolean cont2 =false;
+			do {
+				System.out.println(b.getDisplayString());
+				int m = Validator.getInt(scan, ("Which book number would you like to delete?\n"));
+				if (m > 0 && m <= b.getBooks().size() + 1) {
+					cont2 = true;
+					System.out.println(b.getBookByNumber(m));
+					String l = Validator.getStringMatchingRegex(scan,
+							"Are you sure you want to delete this book? (y/n)\n", "[YyNn]");
+					if (l.equalsIgnoreCase("y")) {
+						b.removeBook(m);
+					}
+				} else {
+					System.out.println("Please enter a number from the list.");
+				}
+			} while (cont2 == false);
 			break;
 		// quitting
 		case 9:
