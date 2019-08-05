@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class CheckOutReturn {
-	static Scanner scan = new Scanner(System.in);
+	final static Scanner scan = new Scanner(System.in);
 	public static String dueDate(String dueAt) {
 		LocalDate ld;
 		ld = LocalDate.now().plusDays(14);
