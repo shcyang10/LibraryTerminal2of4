@@ -29,7 +29,10 @@ public class Library {
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
+		exit(b);
+	}
 
+	private static void exit(BookManager b) {
 		writeToFile(b);
 		System.out.println(GOODBYE_MSG);
 		System.out.println(createNewQuote());
@@ -209,9 +212,7 @@ public class Library {
 			
 		// quitting
 		case 9:
-			System.out.println(GOODBYE_MSG);
-			System.out.println(createNewQuote());
-			writeToFile(b);
+			exit(b);
 			System.exit(0);
 			break;
 		}
