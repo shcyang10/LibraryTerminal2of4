@@ -47,6 +47,9 @@ public final class BookManager {
 				ret += "\n";
 			}
 		}
+		if (ret.equals("\n")) {
+			ret += "We couldn't find that book in our archives.\n";
+		}
 		return ret;
 	}
 
