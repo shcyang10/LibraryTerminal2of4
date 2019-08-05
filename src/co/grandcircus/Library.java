@@ -17,7 +17,6 @@ public class Library {
 		Scanner scan = new Scanner(System.in);
 		BookManager b = new BookManager();
 		String cont = "y";
-
 		System.out.println("Welcome to the Library of Alexandria!");
 
 		while (cont.equalsIgnoreCase("y")) {
@@ -27,6 +26,7 @@ public class Library {
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
+
 		writeToFile(b);
 		System.out.println(GOODBYE_MSG);
 	}
@@ -41,16 +41,14 @@ public class Library {
 
 		// show all books w/ author x
 		case 2:
-			String str;
-			str = Validator.getString(scan, "Type in an author: ");
+			String str = Validator.getString(scan, "Type in an author: ");
 			String a = b.getDisplayString(str, null);
 			System.out.println(a);
 			break;
 
 		// show all books w/ title x
 		case 3:
-			String str4;
-			str4 = Validator.getString(scan, "Type in a title: ");
+			String str4 = Validator.getString(scan, "Type in a title: ");
 			String t = b.getDisplayString(null, str4);
 			System.out.println(t);
 			break;
@@ -84,10 +82,8 @@ public class Library {
 
 		// adding book
 		case 6:
-			String str3;
-			String str2;
-			str3 = Validator.getString(scan, "Enter the title of the book: ");
-			str2 = Validator.getString(scan, "Enter name of author: ");
+			String str3 = Validator.getString(scan, "Enter the title of the book: ");
+			String str2 = Validator.getString(scan, "Enter name of author: ");
 			int c = Validator.getInt(scan,
 					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect option: ",
 					1, 7);
@@ -167,8 +163,7 @@ public class Library {
 	}
 
 	public static void writeToFile(BookManager b) {
-		String fileName = "booklist.txt";
-		Path path = Paths.get(fileName);
+		Path path = Paths.get("booklist.txt");
 		File file = path.toFile();
 		PrintWriter output = null;
 		try {
