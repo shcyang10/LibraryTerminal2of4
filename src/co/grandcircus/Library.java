@@ -15,8 +15,8 @@ public class Library {
 
 	public static void main(String[] args) {
 
-		Scanner scan = new Scanner(System.in);
-		BookManager b = new BookManager();
+		final Scanner scan = new Scanner(System.in);
+		final BookManager b = new BookManager();
 
 		String cont = "y";
 		System.out.println("L I B R A R Y  O F  A L E X A N D R I A");
