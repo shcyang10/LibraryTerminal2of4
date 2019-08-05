@@ -18,4 +18,4 @@ More Adventures of Bob,Bob Jr.,NULL,ON_SHELF,FANTASY
 The Creature of Jekyll Island,G. Edward Griffin,NULL,ON_SHELF,NONFICTION
 The Scapegoat,Rene Girard,NULL,ON_SHELF,PHILOSOPHY
 All You Need is Kill,Hiroshi Sakurazaka,NULL,ON_SHELF,SCIENCE_FICTION
-The Hobbit,J.R.R. Tolkien,08/19/2019,CHECKED_OUT,FANTASY
+The Hobbit,J.R.R. Tolkien,NULL,ON_SHELF,FANTASY

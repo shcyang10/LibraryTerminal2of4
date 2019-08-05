@@ -60,9 +60,10 @@ public class Library {
 			do {
 				System.out.println(b.getDisplayString());
 				int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
+				Status co = Status.CHECKED_OUT;
+				Status q = b.getBookByNumber(i).getStatus();
 				if (i > 0 && i <= b.getBooks().size()) {
-					Status co = Status.CHECKED_OUT;
-					Status q = b.getBookByNumber(i).getStatus();
+					cont2 =true;
 					if (q.equals(co)) {
 						System.out.println("Sorry that book is checked out at the moment.\n");
 					} else {
@@ -85,8 +86,9 @@ public class Library {
 				System.out.println(b.getDisplayString());
 				Status os = Status.ON_SHELF;
 				int x = Validator.getInt(scan, "Which book title number would you like to return?\n");
+				Status ch = b.getBookByNumber(x).getStatus();
 				if (x > 0 && x <= b.getBooks().size()) {
-					Status ch = b.getBookByNumber(x).getStatus();
+					cont3 =true;
 					if (ch.equals(os)) {
 						System.out.println("That book has already been returned.\n");
 					} else {
@@ -171,12 +173,12 @@ public class Library {
 
 		// deleting book
 		case 8:
-			boolean cont5 = false;
+			boolean cont4 = false;
 			do {
 				System.out.println(b.getDisplayString());
 				int m = Validator.getInt(scan, ("Which book number would you like to delete?\n"));
 				if (m > 0 && m <= b.getBooks().size()) {
-					cont2 = true;
+					cont4 = true;
 					System.out.println(b.getBookByNumber(m));
 					String l = Validator.getStringMatchingRegex(scan,
 							"Are you sure you want to delete this book? (y/n)\n", "[YyNn]");
@@ -186,7 +188,7 @@ public class Library {
 				} else {
 					System.out.println("Please enter a number from the list.");
 				}
-			} while (cont5 == false);
+			} while (cont4 == false);
 			break;
 		// quitting
 		case 9:
