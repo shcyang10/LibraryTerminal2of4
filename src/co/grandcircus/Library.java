@@ -19,7 +19,8 @@ public class Library {
 		BookManager b = new BookManager();
 
 		String cont = "y";
-		System.out.println("Welcome to the Library of Alexandria!");
+		System.out.println("L I B R A R Y  O F  A L E X A N D R I A");
+		System.out.println("----------------------------------------");
 
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
