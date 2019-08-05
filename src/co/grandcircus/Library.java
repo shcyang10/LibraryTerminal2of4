@@ -25,7 +25,8 @@ public class Library {
 		while (cont.equalsIgnoreCase("y")) {
 			System.out.println(
 					"1. Display list\n2. Search by author\n3. Search by title\n4. Check book out\n5. Return book\n6. Add book\n7. Sort books by Category\n8. Delete book\n9. Exit");
-			int userInput = Validator.getInt(scan, "Select an option: ", 1, 9);
+			int userInput = Validator.getInt(scan, "\n"
+					+ "Select an option: ", 1, 9);
 			userSelection(scan, userInput, b);
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
@@ -106,7 +107,7 @@ public class Library {
 					b.getBooks().size());
 			Status co = Status.CHECKED_OUT;
 			Status q = b.getBookByNumber(i).getStatus();
-			System.out.println("Checked out: \n" );
+			System.out.println("Checked out: \n");
 
 			if (q.equals(co)) {
 				System.out.println("Sorry that book is checked out at the moment.\n");
@@ -144,7 +145,7 @@ public class Library {
 			String str3 = Validator.getString(scan, "Enter the title of the book: ");
 			String str2 = Validator.getString(scan, "Enter name of author: ");
 			int c = Validator.getInt(scan,
-					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect option: ",
+					"\nChoose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\n\nSelect option: ",
 					1, 7);
 			switch (c) {
 			case 1:
@@ -174,7 +175,7 @@ public class Library {
 		// sort by category
 		case 7:
 			int w = Validator.getInt(scan,
-					"Choose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\nSelect Option: ",
+					"\nChoose your category by entering the corresponding #\n1. Drama\n2. Fantasy\n3. Fiction\n4. Nonfiction\n5. Philosphy\n6. Science\n7. Science Fiction\n\nSelect Option: ",
 					1, 7);
 			switch (w) {
 			case 1:
@@ -207,7 +208,7 @@ public class Library {
 			int m = Validator.getInt(scan, "Which book number would you like to delete?\n", 1, b.getBooks().size());
 
 			System.out.println(b.getBookByNumber(m));
-			String l = Validator.getStringMatchingRegex(scan, "Are you sure you want to delete this book? (y/n)\n",
+			String l = Validator.getStringMatchingRegex(scan, "\nAre you sure you want to delete this book? (y/n)",
 					"[YyNn]");
 			if (l.equalsIgnoreCase("y")) {
 				b.removeBook(m);
