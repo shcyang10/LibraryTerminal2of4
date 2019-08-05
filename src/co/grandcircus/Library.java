@@ -61,12 +61,13 @@ public class Library {
 			Status co = Status.CHECKED_OUT;
 			Status q =b.getBookByNumber(i).getStatus();
 			if(q.equals(co)) {
-				System.out.println("Sorry that book is checked out at the moment.");
+				System.out.println("Sorry that book is checked out at the moment.\n");
 			}else {
 			b.getBookByNumber(i).setStatus(co);
 			String date = null;
 			b.getBookByNumber(i).setDueAt(date);
 			System.out.println(b.getBookByNumber(i));
+			System.out.println("Please remember to return the book on time.\n");
 			}
 			break;
 
@@ -77,11 +78,12 @@ public class Library {
 			int x = Validator.getInt(scan, "Which book title number would you like to return?\n");
 			Status ch = b.getBookByNumber(x).getStatus();
 			if(ch.equals(os)) {
-				System.out.println("That book has already been returned.");
+				System.out.println("That book has already been returned.\n");
 			}else{
 			b.getBookByNumber(x).setStatus(os);
 			b.getBookByNumber(x).resetDueAt();
 			System.out.println(b.getBookByNumber(x));
+			System.out.println("Thank for returning the book on time.\n");
 			}
 			break;
 
