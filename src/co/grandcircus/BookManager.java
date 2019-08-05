@@ -8,7 +8,7 @@ import java.io.FileReader;
 
 public final class BookManager {
 
-	// immutable Vector of books
+	// immutable Vector of books shared by all instances of BookManager
 	private static final Vector<Book> books = new Vector<>();
 
 	// constructor: loads books
