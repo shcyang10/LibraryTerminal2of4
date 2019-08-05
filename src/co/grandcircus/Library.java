@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Library {
 
-	final static String GOODBYE_MSG = "\nGoodbye! Thank you for coming to the Library of Alexandria.\n";
+	final static String GOODBYE_MSG = "\nGoodbye! Thank you for coming to The Library of Alexandria.\n";
 
 	public static void main(String[] args) {
 
