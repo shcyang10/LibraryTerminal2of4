@@ -89,7 +89,7 @@ public class Library {
 				b.getBookByNumber(x).setStatus(os);
 				b.getBookByNumber(x).resetDueAt();
 				System.out.println(b.getBookByNumber(x));
-				System.out.println("Thank for returning the book.\n");
+				System.out.println("Thank you for returning the book.\n");
 			}
 			break;
 
