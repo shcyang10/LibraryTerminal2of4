@@ -87,7 +87,11 @@ public final class BookManager {
 	}
 
 	public Book getBookByNumber(int number) {
-		return books.get(number - 1);
+		try {
+			return books.get(number - 1);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			return null;
+		}
 	}
 
 	public int getNumberFromBook(Book book) {
