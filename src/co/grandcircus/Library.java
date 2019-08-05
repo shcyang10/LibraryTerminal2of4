@@ -75,6 +75,7 @@ public class Library {
 
 		// show all books
 		case 1:
+			System.out.println("\nThe Book List of Alexandria.");
 			System.out.println(b.getDisplayString());
 			break;
 
