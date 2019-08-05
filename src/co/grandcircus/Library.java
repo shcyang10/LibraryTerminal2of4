@@ -157,7 +157,7 @@ public class Library {
 			System.out.println(b.getDisplayString());
 			int m = Validator.getInt(scan, ("Which book number would you like to delete?\n"));
 			System.out.println(b.getBookByNumber(m));
-			String l = Validator.getStringMatchingRegex(scan, "Are you sure you want to delete this book? (y/n)", "[YyNn]");
+			String l = Validator.getStringMatchingRegex(scan, "Are you sure you want to delete this book? (y/n)\n", "[YyNn]");
 			if(l.equalsIgnoreCase("y")) {
 			b.removeBook(m);
 			}
