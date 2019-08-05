@@ -159,6 +159,7 @@ public class Library {
 			b.removeBook(m);
 			break;
 
+		// quitting
 		case 9:
 			System.out.println(GOODBYE_MSG);
 			writeToFile(b);
