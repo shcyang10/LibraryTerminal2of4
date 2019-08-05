@@ -155,10 +155,13 @@ public class Library {
 		// deleting book
 		case 8:
 			System.out.println(b.getDisplayString());
-			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
+			int m = Validator.getInt(scan, ("Which book number would you like to delete?\n"));
+			System.out.println(b.getBookByNumber(m));
+			String l = Validator.getStringMatchingRegex(scan, "Are you sure you want to delete this book? (y/n)", "[YyNn]");
+			if(l.equalsIgnoreCase("y")) {
 			b.removeBook(m);
+			}
 			break;
-
 		// quitting
 		case 9:
 			System.out.println(GOODBYE_MSG);
