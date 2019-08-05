@@ -150,6 +150,7 @@ public class Library {
 
 		// deleting book
 		case 8:
+			System.out.println(b.getDisplayString());
 			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
 			b.removeBook(m);
 			break;
