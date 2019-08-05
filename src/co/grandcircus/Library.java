@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Library {
 
@@ -30,6 +31,43 @@ public class Library {
 
 		writeToFile(b);
 		System.out.println(GOODBYE_MSG);
+		System.out.println(createNewQuote());
+	}
+
+	public static Quote createNewQuote() {
+		Random r = new Random();
+		switch (r.nextInt(10)) {
+			case 0: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 1: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 2: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 3: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 4: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 5: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 6: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 7: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			case 8: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+			default: {
+				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+			}
+		}
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
@@ -171,6 +209,7 @@ public class Library {
 		// quitting
 		case 9:
 			System.out.println(GOODBYE_MSG);
+			System.out.println(createNewQuote());
 			writeToFile(b);
 			System.exit(0);
 			break;
