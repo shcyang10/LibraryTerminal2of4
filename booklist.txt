@@ -15,3 +15,7 @@ Hymns of Gaia,Guy Ribald,NULL,ON_SHELF,SCIENCE
 Twilight of a New Age,Brian Hudson,NULL,ON_SHELF,SCIENCE_FICTION
 Another Book,Bob Man,NULL,ON_SHELF,FICTION
 More Adventures of Bob,Bob Jr.,NULL,ON_SHELF,FANTASY
+The Creature of Jekyll Island,G. Edward Griffin,NULL,ON_SHELF,NONFICTION
+The Scapegoat,Rene Girard,NULL,ON_SHELF,PHILOSOPHY
+All You Need is Kill,Hiroshi Sakurazaka,NULL,ON_SHELF,SCIENCE_FICTION
+The Hobbit,J.R.R. Tolkien,NULL,ON_SHELF,FANTASY
