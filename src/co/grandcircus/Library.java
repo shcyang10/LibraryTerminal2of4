@@ -59,7 +59,7 @@ public class Library {
 			System.out.println(b.getDisplayString());
 			Status co = Status.CHECKED_OUT;
 			// System.out.println("Which book title number would you like to checkout");
-			int i = Validator.getInt(scan, "Which book title number would you like to checkout");
+			int i = Validator.getInt(scan, "Which book title number would you like to checkout?\n");
 			b.getBookByNumber(i).setStatus(co);
 			String date = null;
 			b.getBookByNumber(i).setDueAt(date);
@@ -69,7 +69,7 @@ public class Library {
 			System.out.println(b.getDisplayString());
 			Status os = Status.ON_SHELF;
 			// System.out.println("Which book title number would you like to return");
-			int x = Validator.getInt(scan, "Which book title number would you like to return");
+			int x = Validator.getInt(scan, "Which book title number would you like to return?\n");
 			b.getBookByNumber(x).setStatus(os);
 			b.getBookByNumber(x).resetDueAt();
 			break;
@@ -108,7 +108,7 @@ public class Library {
 				b.addBook(new Book(str3, str2, "NULL", Status.ON_SHELF, Category.SCIENCE_FICTION));
 				break;
 			default:
-				System.out.println("Wrong input");
+				System.out.println("Wrong input!");
 				break;
 			}
 			break;
@@ -139,12 +139,12 @@ public class Library {
 				System.out.println(b.getDisplayString(Category.SCIENCE_FICTION));
 				break;
 			default:
-				System.out.println("Wrong input");
+				System.out.println("Wrong input!");
 				break;
 			}
 			break;
 		case 8:
-			int m = Validator.getInt(scan,("Which book number would you like to delete: "));
+			int m = Validator.getInt(scan,("Which book number would you like to delete?\n"));
 			b.removeBook(m);
 			
 			break;
