@@ -9,6 +9,11 @@ public final class Quote {
 	}
 	@Override 
 	public String toString() {
-		return String.format("\"%s\" - %s", content, author);
+		String quote = String.format("\"%s\" - %s", content, author);
+		String divider = "";
+		for (int i = 0; i < quote.length(); ++i) {
+			divider += "-";
+		}
+		return divider + "\n" + quote;
 	}
 }
