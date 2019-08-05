@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Library {
 
-	final static String GOODBYE_MSG = "Goodbye! Thank you for coming to the Library of Alexandria.";
+	final static String GOODBYE_MSG = "Goodbye! Thank you for coming to the Library of Alexandria.\n";
 
 	public static void main(String[] args) {
 
@@ -41,31 +41,31 @@ public class Library {
 				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
 			}
 			case 1: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Unknown", "You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.");
 			}
 			case 2: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Vince Lombardi", "It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.");
 			}
 			case 3: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Henery Ford", "Whether You Think You Can Or Think You Can’t, You’re Right.");
 			}
 			case 4: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("C.S. Lewis", "You Are Never Too Old To Set Another Goal Or To Dream A New Dream.");
 			}
 			case 5: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Brian Tracy", "Fake It Until You Make It! Act As If You Had All The Confidence You Require Until It Becomes Your Reality.");
 			}
 			case 6: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Marcus Tullius Cicero", "A Room Without Books Is Like A Body Without A Soul.");
 			}
 			case 7: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Zig Ziglar", "You Don’t Have To Be Great To Start, But You Have To Start To Be Great.");
 			}
 			case 8: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Michael Scott", "You miss 100% of the shots you don’t take.\n-Wayne Gretzky");
 			}
 			default: {
-				return new Quote("Abraham Lincoln", "Don't believe everything you read on the internet");
+				return new Quote("Alexander the Great", "There is nothing impossible to him who will try.");
 			}
 		}
 	}
