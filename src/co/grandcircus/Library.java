@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class Library {
 
+	final static String GOODBYE_MSG = "Goodbye! Thank you for coming to the Library of Alexandria.";
+	
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
@@ -26,8 +28,7 @@ public class Library {
 			cont = Validator.getStringMatchingRegex(scan, "Would you like to continue? (y/n) ", "[YyNn]");
 		}
 		writeToFile(b);
-
-		System.out.println("Goodbye!");
+		System.out.println(GOODBYE_MSG);
 	}
 
 	public static void userSelection(Scanner scan, int userInput, BookManager b) {
@@ -149,7 +150,7 @@ public class Library {
 			
 			break;
 		case 9:
-			System.out.println("Goodbye!");
+			System.out.println(GOODBYE_MSG);
 			writeToFile(b);
 			System.exit(0);
 			break;
