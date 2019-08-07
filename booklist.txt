@@ -1,4 +1,4 @@
-The Sun Also Rises,Ernest Hemingway,08/19/2019,CHECKED_OUT,FICTION
+The Sun Also Rises,Ernest Hemingway,NULL,ON_SHELF,FICTION
 Les Miserables,Victor Hugo,NULL,ON_SHELF,DRAMA
 Stranger in a Strange Land,Robert Heinlein,NULL,ON_SHELF,SCIENCE_FICTION
 Beyond Good and Evil,Friedrich Nietzsche,NULL,ON_SHELF,PHILOSOPHY
@@ -12,7 +12,7 @@ Benedictions of Steel,Qhu Zhe Totoro,NULL,ON_SHELF,SCIENCE
 Litany of the Forest,Ziedrich Graff,NULL,ON_SHELF,SCIENCE
 Invocation of the Sea,Lars Dromflet,NULL,ON_SHELF,SCIENCE
 Hymns of Gaia,Guy Ribald,NULL,ON_SHELF,SCIENCE
-Twilight of a New Age,Brian Hudson,NULL,ON_SHELF,SCIENCE_FICTION
+Twilight of a New Age,Brian Hudson,08/19/2019,CHECKED_OUT,SCIENCE_FICTION
 Another Book,Bob Man,NULL,ON_SHELF,FICTION
 More Adventures of Bob,Bob Jr.,NULL,ON_SHELF,FANTASY
 The Creature of Jekyll Island,G. Edward Griffin,NULL,ON_SHELF,NONFICTION
